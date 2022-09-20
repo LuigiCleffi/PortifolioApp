@@ -1,0 +1,50 @@
+body{
+    background-image: url(../../images/subtle-prism.svg);
+}
+
+.title{
+    background: var( --gradient-Titles);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+p{
+    font-weight: 200;
+}
+
+
+
+.ReadMoreButton{
+        border: none;   
+        width: 10rem;
+        height: 3rem;
+        border-radius: 18rem;
+        color: rgb(255, 255, 255);
+        background: var( --gradient-components);
+        transition: all 0.4s ease 0s;
+        font-size: 16px;
+        font-weight: 600;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: none;
+        transition: width 1s;
+    }
+.ReadMoreButton:hover{
+    width: 300px;
+    background-color: var(--gradient-components-hover);
+}
+
+.sectionDivider{
+    width: 4rem;
+    height: 0.375rem;
+    border-radius: 0.625rem;
+    background: var( --gradient-components);
+}
+h1{
+    font-size: 8rem;
+}
+
+h3 {
+    font-size: 2rem; 
+}
