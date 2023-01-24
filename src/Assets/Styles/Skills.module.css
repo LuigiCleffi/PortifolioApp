@@ -1,9 +1,0 @@
-h4, h6{
-    background: var( --gradient-Titles);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
-}
-.star{
-    color: rgb(255, 187, 0);
-}

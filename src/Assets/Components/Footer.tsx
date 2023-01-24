@@ -1,14 +1,9 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import styles from "../Styles/Footer.module.css"
 export function Footer() {
     return (
         <>
             <footer className="text-center w-100 p-3">
-
-
-
                 <section className="mb-4 text-center">
-
                     <a className="btn btn-outline-light btn-floating m-1"
                         href="https://github.com/LuigiCleffi"
                         role="button"

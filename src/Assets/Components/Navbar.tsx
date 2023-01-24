@@ -1,4 +1,21 @@
+interface ScrollParam {
+    section: string;
+    whereToSection: string;
+}
+function scrollDown(param: ScrollParam) {
+    const sectionSelected = document.getElementById(param.section)
+    if (sectionSelected) {
+        sectionSelected.addEventListener("click", function (event) {
+            event.preventDefault();
+            const whereToSection = document.getElementById(param.whereToSection);
+            if (whereToSection) {
+                whereToSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
+}
 export function Navbar() {
+    
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark">
@@ -11,10 +28,14 @@ export function Navbar() {
                                 <a className="nav-link" href="#">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Projects</a>
+                                <a className="nav-link" 
+                                 onClick={()=> scrollDown({ section: "nav-projects", whereToSection: "projects" })}
+                                id="nav-projects"
+                                href="#projects">Projects</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">About me</a>
+                                <a className="nav-link" id="nav-about" 
+                                onClick={()=> scrollDown({ section: "nav-about", whereToSection: "about" })} href="#about">About me</a>
                             </li>
                         </ul>
                     </div>
