@@ -18,7 +18,7 @@ export function ProjectMaintenance({children}: MaintananceChildren){
         <Modal>   
           <div className='closeButton' onClick={() => setIsOpen(false)}>x</div>
           <div className='warningText'>
-            <h4>Website still is in maintanance !</h4>
+            <h4>Website still is in maintenance ! ⚙️⛏️⚒️</h4>
             <article>Please wait a few more days, soon will be available for everyone !</article>
           </div>
         </Modal>
