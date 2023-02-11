@@ -18,16 +18,15 @@ export function AboutMe() {
                             </div>
                         </InfoCard>
                     </Bio>
+                    
                     <div className="sectionDivider m-2" ></div>
 
                     <div className="w-100 bg-dark text-light text-left p-2">
                         <SectionTitle>Get to know me! </SectionTitle>
                         <p>My name is Luigi Cleffi, I am from Brazil. I code since I was 16 now I am 21 and still in love for coding,</p>
                         <p>I'm a photographer on my free time <FaCameraRetro />,</p>
-                        <p>Currently studying coputer science 💻🚀</p>
+                        <p>Currently studying Computer Science at FURB/Blumenau, SC - Brazil💻🚀</p>
                     </div>
-
-
                 </About>
             </div>
 
