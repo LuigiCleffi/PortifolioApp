@@ -37,4 +37,19 @@ button{
 }
 `
 export const Card = styled.div`
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    transition: 0.2s;
+    svg{
+        color: ${props => props.theme["gradient-Titles"]};
+        cursor: pointer;
+    }
+    svg:hover{
+        transform: scale(1.1); 
+    }
+}
+
 `

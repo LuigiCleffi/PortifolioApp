@@ -18,4 +18,8 @@ body{
     font-family: 'Roboto', sans-serif;
     background-size: cover;
 }
+:focus{
+    outline: 0;
+    box-shadow: 2px 2px 2px 1px #537FE7;
+}
 `

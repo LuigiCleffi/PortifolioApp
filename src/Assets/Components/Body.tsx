@@ -1,5 +1,5 @@
 import { AboutMe } from "./AboutMe";
-import { Cards } from "./ProjectsCards";
+import { Cards } from "./Cards";
 import { Skills } from "./SkillsSection";
 import { Footer } from "./Footer";
 import { AboutContainer, ReadMoreButton, ProjectsSection } from "../Styles/Body";
@@ -72,7 +72,6 @@ export function Body() {
                   src={githubImage}
                 />
              
-              
                 <Cards
                   title="Card title"
                   description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
