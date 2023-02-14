@@ -66,6 +66,14 @@ export const SectionDivider = styled.div`
 `
 
 export const ProjectsSection = styled.div`
+
+    svg{
+        color: #fff;
+    background-color: #537FE7;
+    border-radius: 6px;
+    padding: 4px;
+
+    }
     h2{
         background: ${props => props.theme['gradient-Titles']};
         font-size: 3rem; 
