@@ -36,8 +36,6 @@ h3
 `
 
 export const ReadMoreButton = styled.button`
-
-&{
     border: none;   
     width: 10rem;
         height: 3rem;
@@ -52,7 +50,7 @@ export const ReadMoreButton = styled.button`
         cursor: pointer;
         box-shadow: none;
         transition: width 0.3s;
-    }
+    
 &:hover{
     width: 300px;
     background-color: ${props => props.theme['gradient-components-hover']};

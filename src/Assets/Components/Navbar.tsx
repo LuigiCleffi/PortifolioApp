@@ -2,7 +2,7 @@ interface ScrollParam {
     section: string;
     whereToSection: string;
 }
-function scrollDown(param: ScrollParam) {
+export function scrollDown(param: ScrollParam) {
     const sectionSelected = document.getElementById(param.section)
     if (sectionSelected) {
         sectionSelected.addEventListener("click", function (event) {
@@ -32,10 +32,6 @@ export function Navbar() {
                                  onClick={()=> scrollDown({ section: "nav-projects", whereToSection: "projects" })}
                                 id="nav-projects"
                                 href="#projects">Projects</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" id="nav-about" 
-                                onClick={()=> scrollDown({ section: "nav-about", whereToSection: "about" })} href="#about">About me</a>
                             </li>
                         </ul>
                     </div>

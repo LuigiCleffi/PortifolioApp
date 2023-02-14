@@ -1,5 +1,5 @@
 import { FaCameraRetro } from "react-icons/fa"
-import {About, Bio, InfoCard, SectionTitle} from "../Styles/AboutMe"
+import { About, Bio, InfoCard, SectionTitle } from "../Styles/AboutMe"
 
 export function AboutMe() {
     return (
@@ -9,7 +9,7 @@ export function AboutMe() {
                     <Bio className="text-center">
                         <InfoCard className={`bg-light infoCard`}>
                             <div className="imgBorder">
-                            <img src="https://avatars.githubusercontent.com/u/65309377?v=4" className="ProfilePic" alt="" />
+                                <img src="https://avatars.githubusercontent.com/u/65309377?v=4" className="ProfilePic" alt="" />
                             </div>
                             <div>
                                 <span className="h4 text-dark" >Luigi Cleffi</span>
@@ -18,7 +18,7 @@ export function AboutMe() {
                             </div>
                         </InfoCard>
                     </Bio>
-                    
+
                     <div className="sectionDivider m-2" ></div>
 
                     <div className="w-100 bg-dark text-light text-left p-2">

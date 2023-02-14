@@ -1,9 +1,11 @@
+import { useState } from "react"
 import { AboutMe } from "./AboutMe";
 import { Cards } from "./Cards";
 import { Skills } from "./SkillsSection";
 import { Footer } from "./Footer";
 import { AboutContainer, ReadMoreButton, ProjectsSection } from "../Styles/Body";
 import { AboutSection } from "../Styles/AboutMe";
+import { scrollDown } from "./Navbar";
 
 const githubImage = "https://avatars.githubusercontent.com/u/65309377?v=4"
 
@@ -32,75 +34,70 @@ export function Body() {
             </p>
           </div>
         </AboutSection>
+        <a id="aboutMe" onClick={() => scrollDown({ section: "aboutMe", whereToSection: "about" })} href="#about"
+          > <ReadMoreButton>About me</ReadMoreButton></a>
 
-        <ReadMoreButton>Read more</ReadMoreButton>
+
       </AboutContainer>
 
-      
-        <ProjectsSection id="projects" className="container">
-          <div className="card text-bg-dark my-3 p-3 pb-5">
-            <h2 className="card-header fw-bold">Projects</h2>
+
+      <ProjectsSection id="projects" className="container">
+        <div className="card text-bg-dark my-3 p-3 pb-5">
+          <h2 className="card-header fw-bold">Projects</h2>
           <div className="card-body">
-          <div className="row">
-            
-              <Cards
-                title="Card title"
-                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                src={githubImage}
-              />
-           
-            
-              <Cards
-                title="Card title"
-                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                src={githubImage}
-              />
-           
-            
-              <Cards
-                title="Card title"
-                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                src={githubImage}
-              />
-          </div>
-           
             <div className="row">
-              
-                <Cards
-                  title="Card title"
-                  description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                  src={githubImage}
-                />
-             
-                <Cards
-                  title="Card title"
-                  description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                  src={githubImage}
-                />
-             
-              
-                <Cards
-                  title="Card title"
-                  description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                  src={githubImage}
-                />
-             
+
+              <Cards
+                title="Card title"
+                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
+                src={githubImage}
+              />
+
+
+              <Cards
+                title="Card title"
+                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
+                src={githubImage}
+              />
+
+
+              <Cards
+                title="Card title"
+                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
+                src={githubImage}
+              />
+            </div>
+
+            <div className="row">
+
+              <Cards
+                title="Card title"
+                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
+                src={githubImage}
+              />
+
+              <Cards
+                title="Card title"
+                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
+                src={githubImage}
+              />
+
+
+              <Cards
+                title="Card title"
+                description="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
+                src={githubImage}
+              />
+
             </div>
           </div>
-          </div>
-          
-        </ProjectsSection>
-
-
-        <div className={` mt-5`}></div>
-
-        <Skills />
-
-        <div className={` mt-5`}></div>
-
-        <AboutMe />
-
-        <Footer />
+        </div>
+      </ProjectsSection>
+      <div className={` mt-5`}></div>
+      <Skills />
+      <div className={` mt-5`}></div>
+      <AboutMe />
+      <Footer />
     </>
   );
 }
