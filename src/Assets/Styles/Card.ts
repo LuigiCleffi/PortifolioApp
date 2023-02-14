@@ -8,8 +8,8 @@ export const CardContainer = styled.div`
 
 
 export const CardBody = styled.div`
+
 display: flex;
-background-color: black;
 color: ${props => props.theme['white']};
 transition: 0.3s;
 overflow: hidden;
@@ -22,7 +22,10 @@ overflow: hidden;
 }
 
 image{
-    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }
 p{
     text-align: justify;

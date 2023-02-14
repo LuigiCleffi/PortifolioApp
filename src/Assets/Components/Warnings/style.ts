@@ -4,6 +4,10 @@ interface ModalProps {
     blurry: boolean;
     displayModal: boolean;
   }
+  
+export const Warning = styled.div`
+  display: none;
+`
 export const Wrapper = styled.div<ModalProps>`
 display: ${props =>  props.displayModal ? "flex" : "none"};
   position: fixed;

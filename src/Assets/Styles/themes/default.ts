@@ -3,7 +3,12 @@ export const defaultTheme = {
     "gradient-components-hover": "linear-gradient(270deg, #4cc3d8 0%, rgb(180, 131, 239) 100%)", 
     "gradient-Titles": "linear-gradient(to right, #ffffff, #c5c5c5 , #868686, #686868, #434343)",
     "gradient-Title-subsection": "linear-gradient(to right, #ffffff, #EFF5F5,#D6E4E5,#F7F7F7)",
+    
     "bodyTheme": "rgb(15, 22, 36)",
     "buttonWebsiteRedirect": "#181823",
+
+
+    "blue-500": "#4FB2FF",
+    "blue-600": "#537FE7",
     white: "#ffff"
 }
