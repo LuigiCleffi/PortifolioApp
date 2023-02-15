@@ -6,7 +6,9 @@ export const defaultTheme = {
     
     "bodyTheme": "rgb(15, 22, 36)",
     "buttonWebsiteRedirect": "#181823",
-
+    
+    "gray-100": "rgba(233, 233, 233, 0.245)",
+    "gray-400": "#434242",
 
     "blue-500": "#4FB2FF",
     "blue-600": "#537FE7",

@@ -6,6 +6,7 @@ import { GlobalStyle } from "./Global"
 import {Portifolio} from "./pages/NewProjects";
 import { BackgroundImage, PageContainer } from "./Assets/Components/Background/styles";
 import { Navbar } from "./Assets/Components/Navbar";
+import { Login } from "./pages/Login";
 
 
 export default function Routing() {
@@ -21,6 +22,7 @@ export default function Routing() {
             <Routes >
                 <Route path="/" element={<App />} />
                 <Route path="/newProject" element={<Portifolio />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
             </PageContainer>
             </BackgroundImage>
