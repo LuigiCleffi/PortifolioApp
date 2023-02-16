@@ -1,6 +1,7 @@
 import { Card, Button } from "react-bootstrap";
-import { CardContainer, CardFooter, CodeIcon } from "./styles";
-
+import { CardContainer, CardFooter, CodeIcon, EditContainer, TrashIcon } from "./styles";
+import axiosClient from "../../../api/axiosClient";
+import { useState } from "react";
 const githubImage = "https://avatars.githubusercontent.com/u/65309377?v=4";
 interface CardProps {
   defaultProjectName: string;
@@ -17,9 +18,13 @@ export function Cards({
   projectUrl,
   projectRepositoryURL,
 }: CardProps) {
+
   return (
     <CardContainer className="text-light">
+      <EditContainer>
       <Card.Img variant="top" src={githubImage} />
+
+      </EditContainer>
       <Card.Body>
         <Card.Title>{defaultProjectName}</Card.Title>
         <Card.Text>{defaultProjectDescription}</Card.Text>

@@ -7,10 +7,8 @@ export function App() {
       <div className="container mt-2">
       <ProjectMaintenance>
          <UserProjectsPage />
-       </ProjectMaintenance>
-
+      </ProjectMaintenance>
       </div>
-
     </div>
   )
 }

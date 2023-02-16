@@ -1,20 +1,27 @@
-import { InputGroup, Form } from "react-bootstrap";
-import { ContainerLoginForm, LoginContainer } from "./styles";
+import { Button, Form } from "react-bootstrap";
+import { FormLabel, LoginContainer } from "./styles";
 
 export function Login() {
     return (
-        <LoginContainer>
-            <ContainerLoginForm variant="sm">
-                <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                    <Form.Control
-                        placeholder="Username"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                    />
-                </InputGroup>
-            </ContainerLoginForm>
+<LoginContainer>
+    <h1 className="text-light">Login</h1>
+   <Form>
+   <Form.Group className="text-light" controlId="formBasicEmail">
+        <FormLabel>Email address</FormLabel>     
+        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+   </Form.Group>
+   <Form.Group className="mb-3" controlId="formBasicPassword">
+        <FormLabel>Password</FormLabel>
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
 
-        </LoginContainer>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+</LoginContainer>
     )
 }

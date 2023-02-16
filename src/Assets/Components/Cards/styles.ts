@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Card } from "react-bootstrap";
-import { Code } from "phosphor-react";
+import { Code, Pencil, Trash } from "phosphor-react";
 
 
 export const CardContainer = styled(Card)`
@@ -45,4 +45,26 @@ export const CodeIcon = styled(Code)`
     background-color: ${props => props.theme["blue-500"]};
     transition: background-color 0.2s;
   }
-`
+  `
+  export const EditContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    svg{
+      position: absolute;
+      margin: 10px;
+      cursor: pointer;
+  background-color: ${props => props.theme["red-600"]};
+  &:hover{
+    background-color: ${props => props.theme["red-300"]};
+  }
+
+    }
+  `
+type EditVariants = {
+  isVisible?: boolean;
+};
+
+export const TrashIcon = styled(Trash)<EditVariants>`
+  display: ${(props) => (props.isVisible ? "block" : "none")};
+`;

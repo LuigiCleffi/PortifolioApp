@@ -7,8 +7,12 @@ export const defaultTheme = {
     "bodyTheme": "rgb(15, 22, 36)",
     "buttonWebsiteRedirect": "#181823",
     
+    "red-300": "#F55050",
+    "red-600": "#F51B1B",
+    
     "gray-100": "rgba(233, 233, 233, 0.245)",
     "gray-400": "#434242",
+    "gray-800": "#282A3A",
 
     "blue-500": "#4FB2FF",
     "blue-600": "#537FE7",

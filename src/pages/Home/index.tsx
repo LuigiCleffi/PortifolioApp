@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react"
-
 import { NavLink } from "react-router-dom";
-import { ArrowBendLeftUp, ArrowCircleUp, PlusCircle } from "phosphor-react";
+import { PlusCircle } from "phosphor-react";
+
 import { AboutContainer, ProjectsSection, ReadMoreButton } from "./styles";
 import { AboutSection } from "../../Assets/Styles/AboutMe";
 import { Cards } from "../../Assets/Components/Cards";
@@ -9,12 +8,15 @@ import { scrollDown } from "../../Assets/Components/Navbar";
 import { Skills } from "../../Assets/Components/SkillsSection";
 import { AboutMe } from "../../Assets/Components/AboutMe";
 import { Footer } from "../../Assets/Components/Footer";
+import { useContext } from "react";
+import { ProjectContext } from "../../contexts/ProjectCardContex";
+import { TrashIcon } from "../../Assets/Components/Cards/styles";
+import axiosClient from "../../api/axiosClient";
+import { AxiosResponse } from "axios";
 
-const githubImage = "https://avatars.githubusercontent.com/u/65309377?v=4"
 
 export function UserProjectsPage() {
-  const [visible, setVisible] = useState(false)
-
+  const { projects, deleteProject } = useContext(ProjectContext);
   return (
     <>
       <AboutContainer className="col col-sm-4 col-md-6 col-lg-8 col-xl-12">
@@ -58,54 +60,19 @@ export function UserProjectsPage() {
           </div>
           <div className="card-body">
             <div className="row">
+              {projects.map(project => (
+               <>
+                <TrashIcon isVisible={true} size={30} onClick={() => deleteProject(project.id)}/>
+                <Cards
+                  key={parseInt(project.id)}
+                  defaultProjectName={project.name}
+                  defaultProjectDescription={project.description}
+                  projectUrl={project.URL}
+                  projectRepositoryURL={project.repositoryURL}
+                />
+               </>
+              ))}
 
-              <Cards
-                defaultProjectName="Card title"
-                defaultProjectDescription="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                projectUrl="https://www.google.com.br"
-                projectRepositoryURL="https://www.google.com.br"
-              />
-
-
-              <Cards
-                defaultProjectName="Card title"
-                defaultProjectDescription="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                projectUrl="https://www.google.com.br"
-                projectRepositoryURL="https://www.google.com.br"
-              />
-
-
-              <Cards
-                defaultProjectName="Card title"
-                defaultProjectDescription="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                projectUrl="https://www.google.com.br"
-                projectRepositoryURL="https://www.google.com.br"
-              />
-            </div>
-
-            <div className="row">
-
-              <Cards
-                defaultProjectName="Card title"
-                defaultProjectDescription="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                projectUrl="https://www.google.com.br"
-                projectRepositoryURL="https://www.google.com.br"
-              />
-
-              <Cards
-                defaultProjectName="Card title"
-                defaultProjectDescription="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                projectUrl="https://www.google.com.br"
-                projectRepositoryURL="https://www.google.com.br"
-              />
-
-
-              <Cards
-                defaultProjectName="Card title"
-                defaultProjectDescription="lorem ipsum Dolore ullamco minim aute officia aliqua nulla ad. Sunt anim laborum amet voluptate magna veniam dolor amet exercitation sit anim sint consequat. Sit nulla culpa excepteur enim excepteur esse elit do esse est et. Dolor do pariatur fugiat tempor Lorem ex. Aliquip voluptate velit magna est do in. Nostrud velit minim id commodo. Fugiat aliqua non velit duis et sint."
-                projectUrl="https://www.google.com.br"
-                projectRepositoryURL="https://www.google.com.br"
-              />
 
             </div>
           </div>
