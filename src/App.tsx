@@ -1,15 +1,18 @@
-import { ProjectMaintenance } from "./Assets/Components/Warnings/ProjectMaintenance";
-import { UserProjectsPage } from './pages/Home';
+import { ProjectMaintenance } from "./assets/components/Warnings/ProjectMaintenance";
+import { env } from "./config/env";
+import { Home } from "./pages/Home";
 export function App() {
-
   return (
     <div className="App">
-      <div className="container mt-2">
-      <ProjectMaintenance>
-         <UserProjectsPage />
-      </ProjectMaintenance>
+      <div className="mt-2">
+        {env.NODE_ENV === "development" ? (
+          <Home />
+        ) : (
+          <ProjectMaintenance>
+            <Home />
+          </ProjectMaintenance>
+        )}
       </div>
     </div>
-  )
+  );
 }
-

@@ -1,8 +1,14 @@
 import styled, { css } from "styled-components";
 export const AboutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 87.4%;
+  margin: 0 auto;
+  text-align: left;
   h1 {
     background: ${(props) => props.theme["gradient-Titles"]};
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
     font-size: 6rem;
@@ -14,12 +20,6 @@ export const AboutContainer = styled.div`
   p {
     font-weight: 200;
   }
-
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 100%;
-
   @media (max-width: 600px) {
     h1 {
       font-weight: 400;
@@ -86,10 +86,15 @@ export const ProjectsSection = styled.div`
     font-size: 3rem;
     font-weight: bold;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 `;
 
+export const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 export const BackToTop = styled.button`
   abbr {
     &:hover {

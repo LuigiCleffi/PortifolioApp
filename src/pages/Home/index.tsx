@@ -1,25 +1,25 @@
 import { NavLink } from "react-router-dom";
 import { PlusCircle } from "phosphor-react";
+import {
+  AboutContainer,
+  PageWrapper,
+  ProjectsSection,
+  ReadMoreButton,
+} from "./styles";
+import { AboutSection } from "../../assets/styles/AboutMe";
+import { Cards } from "../../assets/components/Cards";
+import { scrollDown } from "../../assets/components/Navbar";
+import { Skills } from "../../assets/components/SkillsSection";
+import { AboutMe } from "../../assets/components/AboutMe";
+import { Footer } from "../../assets/components/Footer";
+import { selectPortifolioData } from "../../state/local/portifolio/selector";
+import { useAppSelector } from "../../state/local/hooks";
 
-import { AboutContainer, ProjectsSection, ReadMoreButton } from "./styles";
-import { AboutSection } from "../../Assets/Styles/AboutMe";
-import { Cards } from "../../Assets/Components/Cards";
-import { scrollDown } from "../../Assets/Components/Navbar";
-import { Skills } from "../../Assets/Components/SkillsSection";
-import { AboutMe } from "../../Assets/Components/AboutMe";
-import { Footer } from "../../Assets/Components/Footer";
-import { useContext } from "react";
-import { ProjectContext } from "../../contexts/ProjectCardContex";
-import { TrashIcon } from "../../Assets/Components/Cards/styles";
-import axiosClient from "../../api/axiosClient";
-import { AxiosResponse } from "axios";
-
-
-export function UserProjectsPage() {
-  const { projects, deleteProject } = useContext(ProjectContext);
+export function Home() {
+  const portifolioData = useAppSelector(selectPortifolioData);
   return (
-    <>
-      <AboutContainer className="col col-sm-4 col-md-6 col-lg-8 col-xl-12">
+    <PageWrapper>
+      <AboutContainer>
         <div>
           <h1 className="mt-4">Web Developer</h1>
           <h3>React | Express JS | Node</h3>
@@ -42,38 +42,43 @@ export function UserProjectsPage() {
           </div>
         </AboutSection>
 
-        <a id="aboutMe" className="goToAboutSection" onClick={() => scrollDown({ section: "aboutMe", whereToSection: "about" })} href="#about">
-          <ReadMoreButton>
-            About me
-          </ReadMoreButton>
+        <a
+          id="aboutMe"
+          className="goToAboutSection"
+          onClick={() =>
+            scrollDown({ section: "aboutMe", whereToSection: "about" })
+          }
+          href="#about">
+          <ReadMoreButton>About me</ReadMoreButton>
         </a>
-
-
       </AboutContainer>
-
 
       <ProjectsSection id="projects" className="container">
         <div className="card text-bg-dark my-3 p-3 pb-5">
           <div className="d-flex justify-content-between align-items-center">
             <h2 className="card-header fw-bold">Projects</h2>
-            <NavLink to="/newProject"><PlusCircle size={40} /></NavLink>
+            <NavLink to="/portifolio">
+              <PlusCircle size={40} />
+            </NavLink>
           </div>
           <div className="card-body">
             <div className="row">
-              {projects.map(project => (
-               <>
-                <TrashIcon isVisible={true} size={30} onClick={() => deleteProject(project.id)}/>
-                <Cards
-                  key={parseInt(project.id)}
-                  defaultProjectName={project.name}
-                  defaultProjectDescription={project.description}
-                  projectUrl={project.URL}
-                  projectRepositoryURL={project.repositoryURL}
-                />
-               </>
+              {portifolioData.map((project) => (
+                <>
+                  {/* <TrashIcon
+                    isVisible={true}
+                    size={30}
+                    onClick={() => deleteProject(project.id)}
+                  /> */}
+                  <Cards
+                    key={project.id}
+                    title={project.name}
+                    description={project.description}
+                    url={project.url}
+                    repositoryURL={project.repository}
+                  />
+                </>
               ))}
-
-
             </div>
           </div>
         </div>
@@ -83,6 +88,6 @@ export function UserProjectsPage() {
       <div className={` mt-5`}></div>
       <AboutMe />
       <Footer />
-    </>
+    </PageWrapper>
   );
 }
