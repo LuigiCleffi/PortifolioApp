@@ -8,7 +8,7 @@ type RoutesProps = {
   element: JSX.Element;
 };
 
-const RoutesArea: RoutesProps[] = [
+const RoutesArea = [
   {
     path: "/",
     title: "Home",
@@ -24,6 +24,6 @@ const RoutesArea: RoutesProps[] = [
     title: "Login",
     element: <Login />,
   },
-] as const;
+];
 
 export default RoutesArea;
