@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "./Assets/Styles/themes/default";
-import { App } from "./App";
+import { defaultTheme } from "./assets/styles/themes/default";
 import { GlobalStyle } from "./Global";
-import { Portifolio } from "./pages/NewProjects";
-import { ProjectProvider } from "./contexts/ProjectCardContex";
-import {BackgroundImage, PageContainer} from "./Assets/Components/Background/styles";
-import { Navbar } from "./Assets/Components/Navbar";
-import { Login } from "./pages/Login";
+import RoutesArea from "./state/data/routes";
+import {
+  BackgroundImage,
+  PageContainer,
+} from "./assets/components/Background/styles";
+import { Navbar } from "./assets/components/Navbar";
+import { Provider } from "react-redux";
+import store from "./state/local/store";
 
 export default function Routing() {
   return (
@@ -17,13 +19,17 @@ export default function Routing() {
         <BackgroundImage>
           <PageContainer>
             <Navbar />
-            <ProjectProvider>
+            <Provider store={store}>
               <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/newProject" element={<Portifolio />} />
-                <Route path="/login" element={<Login />} />
+                {RoutesArea.map((route, index) => (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
               </Routes>
-            </ProjectProvider>
+            </Provider>
           </PageContainer>
         </BackgroundImage>
       </BrowserRouter>
