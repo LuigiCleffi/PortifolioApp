@@ -20,6 +20,9 @@ export const AboutContainer = styled.div`
   p {
     font-weight: 200;
   }
+  @media (min-width: 1491px) {
+    width: calc(100% - 30%);
+  }
   @media (max-width: 600px) {
     h1 {
       font-weight: 400;
